@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-package quizjava;
+package v_quizjava;
+
+import c_quizjava.EditorLogic;
 
 /**
  *
@@ -15,9 +17,12 @@ public class EditorFrame extends javax.swing.JFrame {
     /**
      * Creates new form EditorFrame
      */
+    EditorLogic editorLogic;
+    
     public EditorFrame() {
-        initComponents();
+        initComponents(); 
         this.setLocationRelativeTo(null);
+        editorLogic = new EditorLogic();
     }
 
     /**
