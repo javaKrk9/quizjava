@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<questions>
+    <question>
+        <answerList>
+            <answerString>private</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>protected</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>final</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>public</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>abstract</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>wszystkie można</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>1</questionID>
+        <questionString>Który modyfikator można stosować wraz z modyfikatorem 'static'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+</questions>

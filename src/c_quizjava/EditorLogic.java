@@ -58,4 +58,9 @@ public class EditorLogic {
         return questionManager.saveQuestions();
     }
     
+    public boolean loadQuestions()
+    {
+        return questionManager.loadQuestions();
+    }
+    
 }

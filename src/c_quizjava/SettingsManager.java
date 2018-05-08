@@ -15,6 +15,7 @@ import m_quizjava.Settings;
 public class SettingsManager {
     
     private Settings settings;
+    private final String xmlPath = "data/settings.xml";
 
     public SettingsManager() {
     }

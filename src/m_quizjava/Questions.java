@@ -12,14 +12,20 @@ import m_quizjava.Question;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Mikołaj
  */
+@XmlRootElement
 public class Questions {
     
     private ArrayList<Question> questionList;
+
+    public Questions() {
+    }
 
     public Questions(ArrayList<Question> questionList) {
         this.questionList = questionList;
@@ -58,10 +64,14 @@ public class Questions {
         return true;
     }
 
+    @XmlElement(name = "question")
     public ArrayList<Question> getQuestionList() {
         return questionList;
     }
+
+    public void setQuestionList(ArrayList<Question> questionList) {
+        this.questionList = questionList;
+    }
             
-    
     
 }

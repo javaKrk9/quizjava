@@ -16,6 +16,7 @@ public class StatisticsManager {
     
     
     private Statistics statistics;
+    private final String xmlPath = "data/statistics.xml";
 
     public StatisticsManager() {
     }

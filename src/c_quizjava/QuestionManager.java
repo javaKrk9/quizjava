@@ -6,7 +6,12 @@
 
 package c_quizjava;
 
+import java.io.File;
 import java.util.ArrayList;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import m_quizjava.Question;
 import m_quizjava.Questions;
 import m_quizjava.Settings;
@@ -19,7 +24,7 @@ public class QuestionManager {
     
     
     private Questions questions;
-    
+    private final String xmlPath = "data/questionList.xml";
     
     public QuestionManager()
     {
@@ -33,7 +38,19 @@ public class QuestionManager {
     
     private boolean unmarshallQuestions()
     {
-        //unmarshall questions
+        try
+        {
+            File file = new File(xmlPath);
+            JAXBContext context = JAXBContext.newInstance(Questions.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            questions = (Questions)unmarshaller.unmarshal(file);
+            int i=1;
+        }
+        catch(JAXBException jxb)
+        {
+            System.out.println("Houston, mamy problem: "+jxb.toString());
+            return false;
+        }
         return true;
     }
     
@@ -44,7 +61,20 @@ public class QuestionManager {
     
     private boolean marshallQuestions()
     {
-        //marshall questions
+        try
+        {
+            File file = new File(xmlPath);
+            JAXBContext context = JAXBContext.newInstance(Questions.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.marshal(questions, System.out);
+            marshaller.marshal(questions, file);
+        }
+        catch(JAXBException jxb)
+        {
+            System.out.println("Houston, mamy problem: "+jxb.toString());
+            return false;
+        }
         return true;
     }
     

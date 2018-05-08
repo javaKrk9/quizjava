@@ -6,8 +6,7 @@
 
 package m_quizjava;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
@@ -40,25 +39,49 @@ public class Question {
     public Question() {
     }
     
-    
+    @XmlElement
     public String getQuestionString() {
         return questionString;
     }
-
+    
+    @XmlElement
     public Answer[] getAnswerList() {
         return answerList;
     }
 
-    public int getQuestionID() {
+    @XmlElement
+    public Integer getQuestionID() {
         return questionID;
     }
 
+    @XmlElement
     public int getAttemptsOnThisQuestion() {
         return attemptsOnThisQuestion;
     }
 
+    @XmlElement
     public int getSuccessfulAttemptsOnThisQuestion() {
         return successfulAttemptsOnThisQuestion;
+    }
+
+    public void setQuestionString(String questionString) {
+        this.questionString = questionString;
+    }
+
+    public void setAnswerList(Answer[] answerList) {
+        this.answerList = answerList;
+    }
+
+    public void setQuestionID(Integer questionID) {
+        this.questionID = questionID;
+    }
+
+    public void setAttemptsOnThisQuestion(int attemptsOnThisQuestion) {
+        this.attemptsOnThisQuestion = attemptsOnThisQuestion;
+    }
+
+    public void setSuccessfulAttemptsOnThisQuestion(int successfulAttemptsOnThisQuestion) {
+        this.successfulAttemptsOnThisQuestion = successfulAttemptsOnThisQuestion;
     }
 
     public void incrementAttemptsOnThisQuestion() {

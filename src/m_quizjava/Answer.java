@@ -6,6 +6,8 @@
 
 package m_quizjava;
 
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  *
  * @author Mikołaj
@@ -20,12 +22,25 @@ public class Answer {
         this.correct = correct;
     }
 
+    public Answer() {
+    }
+    
+    @XmlElement
     public String getAnswerString() {
         return answerString;
     }
 
+    @XmlElement
     public boolean isCorrect() {
         return correct;
+    }
+
+    public void setAnswerString(String answerString) {
+        this.answerString = answerString;
+    }
+
+    public void setCorrect(boolean correct) {
+        this.correct = correct;
     }
 
     

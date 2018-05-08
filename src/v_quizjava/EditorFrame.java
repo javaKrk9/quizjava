@@ -24,6 +24,7 @@ public class EditorFrame extends javax.swing.JFrame {
         initComponents(); 
         this.setLocationRelativeTo(null);
         editorLogic = new EditorLogic();
+        loadQuestionsList();
         resetTextFields();
     }
 
@@ -373,13 +374,17 @@ public class EditorFrame extends javax.swing.JFrame {
         editorLogic.addQuestion(question);
     }
     
-    
+    private void loadQuestionsList()
+    {
+        editorLogic.loadQuestions();
+        editorLogic.getQuestionList().toArray();
+        questionList.setListData(editorLogic.getQuestionList().toArray());
+    }
     
     private void reloadQuestionsList()
     {
         questionList.removeAll();
-        editorLogic.getQuestionList().toArray();
-        questionList.setListData(editorLogic.getQuestionList().toArray());
+        loadQuestionsList();
     }
     
     /**
