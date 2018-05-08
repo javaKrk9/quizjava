@@ -4,21 +4,12 @@
  * and open the template in the editor.
  */
 
-package c_quizjava;
-
-import m_quizjava.Settings;
+package m_quizjava;
 
 /**
  *
  * @author Mikołaj
  */
-public class SettingsLogic {
-    
-    
-    private SettingsManager settingsManager;
-    
-    
-    
-    
+public class Statistics {
     
 }

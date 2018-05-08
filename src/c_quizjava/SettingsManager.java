@@ -6,40 +6,20 @@
 
 package c_quizjava;
 
-import m_quizjava.Question;
-import m_quizjava.Questions;
 import m_quizjava.Settings;
 
 /**
  *
  * @author Mikołaj
  */
-public class ApplicationManager {
+public class SettingsManager {
     
-    
-    private Questions questions;
     private Settings settings;
-    
-    
-    public ApplicationManager()
-    {
-        
+
+    public SettingsManager() {
     }
     
-    public void loadQuestions()
-    {
-        //unmarshall questions
-    }
     
-    public void saveQuestions()
-    {
-        //marshall questions
-    }
-    
-    public Question getQuestion()
-    {
-        return questions.getQuestion();
-    }
     
     public void loadSettings()
     {

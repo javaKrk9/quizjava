@@ -10,6 +10,8 @@ package m_quizjava;
 
 import m_quizjava.Question;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -23,12 +25,43 @@ public class Questions {
         this.questionList = questionList;
     }
     
-    
     public Question getQuestion()
     {
         //get specific question
         //return questionList.get(x);
         return null;
     }
+    
+    public Question getQuestionByID(int id)
+    {
+        List<Question> searched= questionList.stream().filter(a->a.getQuestionID()==id).collect(Collectors.toList());
+        if(searched.size()==1)
+            return searched.get(0);
+        else if(searched.size()<1)
+            return null;
+        else if(searched.size()>1)
+            return searched.get(0);
+        else
+            return null;
+    }
+    
+    public boolean addQuestion(Question question)
+    {
+        Question twinQuestion = getQuestionByID(question.getQuestionID());
+        if(twinQuestion==null)
+            questionList.add(question);
+        else
+        {
+            questionList.remove(twinQuestion);
+            questionList.add(question);
+        }
+        return true;
+    }
+
+    public ArrayList<Question> getQuestionList() {
+        return questionList;
+    }
+            
+    
     
 }

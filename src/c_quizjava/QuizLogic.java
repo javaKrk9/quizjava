@@ -12,4 +12,11 @@ package c_quizjava;
  */
 public class QuizLogic {
     
+    public QuestionManager questionManager;
+    public SettingsManager settingsManager;
+    public StatisticsManager statisticsManager;
+    
+    
+    
+    
 }
