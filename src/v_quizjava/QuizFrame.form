@@ -38,29 +38,46 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="answer6Checkbox" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="answer5Checkbox" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="answer4Checkbox" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="answer3Checkbox" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="answer2Checkbox" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="checkButton" min="-2" pref="182" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="nextQuestionButton" min="-2" pref="198" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="answer1Checkbox" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="returnButton" min="-2" pref="213" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="quizLabel" min="-2" pref="392" max="-2" attributes="0"/>
-                              <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox1" min="-2" pref="265" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="checkButton" min="-2" pref="170" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="returnButton" min="-2" pref="199" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="questionNumberLabel" min="-2" pref="83" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="questionNumberToBeEditedLabel" min="-2" pref="197" max="-2" attributes="0"/>
+                                  <Component id="questionNumberToBeEditedLabel" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="479" max="32767" attributes="0"/>
+                          <EmptySpace pref="11" max="32767" attributes="0"/>
+                          <Component id="resultLabel" min="-2" pref="213" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -76,23 +93,35 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="questionNumberLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="questionNumberToBeEditedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="resultLabel" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="151" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="161" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                  <Component id="answer1Checkbox" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="returnButton" pref="36" max="32767" attributes="0"/>
-                      <Component id="checkButton" max="32767" attributes="0"/>
+                  <Component id="answer2Checkbox" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="answer3Checkbox" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="answer4Checkbox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="answer5Checkbox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="answer6Checkbox" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="returnButton" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="checkButton" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="nextQuestionButton" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -105,8 +134,9 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="questionTextArea">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
@@ -122,24 +152,29 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="checkButtonMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="answer1Checkbox">
           <Properties>
             <Property name="text" type="java.lang.String" value="jCheckBox1"/>
+            <Property name="actionCommand" type="java.lang.String" value="answer1Checkbox"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="answer2Checkbox">
           <Properties>
             <Property name="text" type="java.lang.String" value="jCheckBox2"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="actionCommand" type="java.lang.String" value="answer2Checkbox"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+        <Component class="javax.swing.JCheckBox" name="answer3Checkbox">
           <Properties>
             <Property name="text" type="java.lang.String" value="jCheckBox3"/>
+            <Property name="actionCommand" type="java.lang.String" value="answer3Checkbox"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+        <Component class="javax.swing.JCheckBox" name="answer4Checkbox">
           <Properties>
             <Property name="text" type="java.lang.String" value="jCheckBox4"/>
+            <Property name="actionCommand" type="java.lang.String" value="answer4Checkbox"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="returnButton">
@@ -165,6 +200,38 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="questionNumberToBeEditedLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="answer5Checkbox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jCheckBox5"/>
+            <Property name="actionCommand" type="java.lang.String" value="answer5Checkbox"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="answer6Checkbox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jCheckBox6"/>
+            <Property name="actionCommand" type="java.lang.String" value="answer6Checkbox"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="nextQuestionButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NowePytanie"/>
+            <Property name="actionCommand" type="java.lang.String" value="nextQuestionButton"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nextQuestionButtonMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="resultLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Gabriola" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Brawo!"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

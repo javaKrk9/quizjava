@@ -64,6 +64,12 @@ public class Question {
         return successfulAttemptsOnThisQuestion;
     }
 
+    public Answer getAnswer(int i)
+    {
+        if(i<0 && i>5) return null;
+        return answerList[i];
+    }
+    
     public void setQuestionString(String questionString) {
         this.questionString = questionString;
     }

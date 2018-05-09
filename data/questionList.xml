@@ -30,4 +30,274 @@
         <questionString>Który modyfikator można stosować wraz z modyfikatorem 'static'?</questionString>
         <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
     </question>
+    <question>
+        <answerList>
+            <answerString>1</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>2</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>3</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>8</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>11</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>7</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>2</questionID>
+        <questionString>Ile bajt zawiera bitów?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>1 bajt</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>2 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>4 bajty </answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>16 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>32 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>3</questionID>
+        <questionString>Jaka jest jest wielkość typu 'byte'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>1 bajt</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>2 bajty</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>4 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>16 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>32 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>4</questionID>
+        <questionString>Jaka jest wielkość typu 'short'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>1 bajt</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>2 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>4 bajty</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>16 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>32 bity</answerString>
+            <correct>true</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>5</questionID>
+        <questionString>Jaka jest wielkość typu 'int'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>64 bity</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bitów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>4 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bajtów</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>32 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>16 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>6</questionID>
+        <questionString>Jaka jest wielkość typu 'long'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>4 bity</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>32 bity</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bitów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>4 bajty</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>16 bitów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>7</questionID>
+        <questionString>Jaka jest wielkość typu 'float'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>8 bitów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>16 bajtów</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>64 bajty</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>8 bajtów</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>32 bity</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>64 bity</answerString>
+            <correct>true</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>8</questionID>
+        <questionString>Jaka jest wielkość typu 'double'?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>33</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>%</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>'</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>f</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>^</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>7</answerString>
+            <correct>true</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>9</questionID>
+        <questionString>Które z wymienionych jest typu char?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
+    <question>
+        <answerList>
+            <answerString>&amp;&amp;</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>!=</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>++</answerString>
+            <correct>true</correct>
+        </answerList>
+        <answerList>
+            <answerString>/\</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>:</answerString>
+            <correct>false</correct>
+        </answerList>
+        <answerList>
+            <answerString>?</answerString>
+            <correct>false</correct>
+        </answerList>
+        <attemptsOnThisQuestion>0</attemptsOnThisQuestion>
+        <questionID>10</questionID>
+        <questionString>Które z wymienionych to operatory?</questionString>
+        <successfulAttemptsOnThisQuestion>0</successfulAttemptsOnThisQuestion>
+    </question>
 </questions>

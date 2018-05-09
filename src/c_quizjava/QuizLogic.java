@@ -12,9 +12,60 @@ package c_quizjava;
  */
 public class QuizLogic {
     
-    public QuestionManager questionManager;
-    public SettingsManager settingsManager;
-    public StatisticsManager statisticsManager;
+    private QuestionManager questionManager;
+    private SettingsManager settingsManager;
+    private StatisticsManager statisticsManager;
+
+    public QuizLogic() 
+    {
+        initQuestionManager();
+        initSettingsManager();
+        initStatisticsManager();
+    }
+
+    private void initQuestionManager()
+    {
+        questionManager = new QuestionManager();
+        questionManager.loadQuestions();
+    }
+    
+    private void initSettingsManager()
+    {
+        settingsManager = new SettingsManager();
+        //settingsManager.loadSettings();
+    }
+     
+    private void initStatisticsManager()
+    {
+        statisticsManager = new StatisticsManager();
+        //statisticsManager.loadStatistics();
+    }
+    
+    public QuestionManager getQuestionManager() {
+        return questionManager;
+    }
+
+    public void setQuestionManager(QuestionManager questionManager) {
+        this.questionManager = questionManager;
+    }
+
+    public SettingsManager getSettingsManager() {
+        return settingsManager;
+    }
+
+    public void setSettingsManager(SettingsManager settingsManager) {
+        this.settingsManager = settingsManager;
+    }
+
+    public StatisticsManager getStatisticsManager() {
+        return statisticsManager;
+    }
+
+    public void setStatisticsManager(StatisticsManager statisticsManager) {
+        this.statisticsManager = statisticsManager;
+    }
+    
+    
     
     
     

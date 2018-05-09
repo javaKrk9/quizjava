@@ -8,6 +8,7 @@ package c_quizjava;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -44,7 +45,6 @@ public class QuestionManager {
             JAXBContext context = JAXBContext.newInstance(Questions.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             questions = (Questions)unmarshaller.unmarshal(file);
-            int i=1;
         }
         catch(JAXBException jxb)
         {
@@ -80,7 +80,14 @@ public class QuestionManager {
     
     public Question getRandomQuestion()
     {
-        return questions.getQuestion();
+        return questions.getQuestion(randomInt(0,questions.getQuestionCount()-1));
+    }
+    
+    private int randomInt(int min, int max)
+    {
+        Random rand = new Random();
+        int  n = rand.nextInt((max+1-min))+min;
+        return n;
     }
     
     public Question getQuestionByID(int id)

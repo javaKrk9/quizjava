@@ -6,6 +6,11 @@
 
 package v_quizjava;
 
+import c_quizjava.QuizLogic;
+import java.awt.Color;
+import javax.swing.JCheckBox;
+import m_quizjava.Question;
+
 /**
  *
  * @author Mikołaj
@@ -15,9 +20,15 @@ public class QuizFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    QuizLogic quizLogic;
+    javax.swing.JCheckBox[] answerCheckbox;
+    
     public QuizFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
+        quizLogic = new QuizLogic();
+        initCheckbox();
+        loadQuestion();
     }
 
     /**
@@ -31,21 +42,26 @@ public class QuizFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        questionTextArea = new javax.swing.JTextArea();
         checkButton = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        answer1Checkbox = new javax.swing.JCheckBox();
+        answer2Checkbox = new javax.swing.JCheckBox();
+        answer3Checkbox = new javax.swing.JCheckBox();
+        answer4Checkbox = new javax.swing.JCheckBox();
         returnButton = new javax.swing.JButton();
         quizLabel = new javax.swing.JLabel();
         questionNumberToBeEditedLabel = new javax.swing.JLabel();
+        answer5Checkbox = new javax.swing.JCheckBox();
+        answer6Checkbox = new javax.swing.JCheckBox();
+        nextQuestionButton = new javax.swing.JButton();
+        resultLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        questionTextArea.setEditable(false);
+        questionTextArea.setColumns(20);
+        questionTextArea.setRows(5);
+        jScrollPane1.setViewportView(questionTextArea);
 
         checkButton.setText("Sprawdź");
         checkButton.setActionCommand("checkButton");
@@ -55,13 +71,18 @@ public class QuizFrame extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("jCheckBox1");
+        answer1Checkbox.setText("jCheckBox1");
+        answer1Checkbox.setActionCommand("answer1Checkbox");
 
-        jCheckBox2.setText("jCheckBox2");
+        answer2Checkbox.setText("jCheckBox2");
+        answer2Checkbox.setToolTipText("");
+        answer2Checkbox.setActionCommand("answer2Checkbox");
 
-        jCheckBox3.setText("jCheckBox3");
+        answer3Checkbox.setText("jCheckBox3");
+        answer3Checkbox.setActionCommand("answer3Checkbox");
 
-        jCheckBox4.setText("jCheckBox4");
+        answer4Checkbox.setText("jCheckBox4");
+        answer4Checkbox.setActionCommand("answer4Checkbox");
 
         returnButton.setText("Powrót do Menu");
         returnButton.setActionCommand("returnButton");
@@ -75,6 +96,25 @@ public class QuizFrame extends javax.swing.JFrame {
 
         questionNumberLabel.setText("Pytanie numer: ");
 
+        questionNumberToBeEditedLabel.setText("0");
+
+        answer5Checkbox.setText("jCheckBox5");
+        answer5Checkbox.setActionCommand("answer5Checkbox");
+
+        answer6Checkbox.setText("jCheckBox6");
+        answer6Checkbox.setActionCommand("answer6Checkbox");
+
+        nextQuestionButton.setText("NowePytanie");
+        nextQuestionButton.setActionCommand("nextQuestionButton");
+        nextQuestionButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nextQuestionButtonMouseClicked(evt);
+            }
+        });
+
+        resultLabel.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
+        resultLabel.setText("Brawo!");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -83,22 +123,34 @@ public class QuizFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(answer6Checkbox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(answer5Checkbox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(answer4Checkbox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(answer3Checkbox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(answer2Checkbox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(nextQuestionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(answer1Checkbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(130, 130, 130)))
+                        .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(quizLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(questionNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(questionNumberToBeEditedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 479, Short.MAX_VALUE)))
+                                .addComponent(questionNumberToBeEditedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addComponent(resultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -109,22 +161,31 @@ public class QuizFrame extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(questionNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(questionNumberToBeEditedLabel))
+                    .addComponent(questionNumberToBeEditedLabel)
+                    .addComponent(resultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
+                .addComponent(answer1Checkbox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
-                .addGap(47, 47, 47)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(checkButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addComponent(answer2Checkbox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(answer3Checkbox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(answer4Checkbox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(answer5Checkbox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(answer6Checkbox))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nextQuestionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +204,7 @@ public class QuizFrame extends javax.swing.JFrame {
 
     private void checkButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkButtonMouseClicked
         // TODO add your handling code here:
+        checkQuestion();
     }//GEN-LAST:event_checkButtonMouseClicked
 
     private void returnButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseClicked
@@ -150,6 +212,109 @@ public class QuizFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_returnButtonMouseClicked
 
+    private void nextQuestionButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextQuestionButtonMouseClicked
+        // TODO add your handling code here:
+        loadQuestion();
+    }//GEN-LAST:event_nextQuestionButtonMouseClicked
+
+    private void initCheckbox()
+    {
+        answerCheckbox = new javax.swing.JCheckBox[] { answer1Checkbox,answer2Checkbox,answer3Checkbox,
+            answer4Checkbox,answer5Checkbox,answer6Checkbox };
+    }
+    
+    private void checkQuestion()
+    {   
+        Question question = quizLogic
+                .getQuestionManager()
+                .getQuestionByID(Integer.parseInt(questionNumberToBeEditedLabel.getText()));
+        checkAnswers(question);
+    }
+    
+    private void checkAnswers(Question question)
+    {
+        boolean result = true;
+        for(int i=0; i<answerCheckbox.length; i++)
+        {
+            if(answerCheckbox[i].isSelected() || question.getAnswer(i).isCorrect())
+            {
+                if(/*answerCheckbox[i].isSelected() ==*/question.getAnswer(i).isCorrect())
+                {
+                    answerCheckbox[i].setForeground(Color.green);
+                }
+                else
+                {
+                    answerCheckbox[i].setForeground(Color.red);
+                }
+            }
+            if(answerCheckbox[i].isSelected() != question.getAnswer(i).isCorrect())
+            {
+                result = false;
+            }
+        }
+        setResultLabel(result);
+    }
+    
+    private void resetColors()
+    {
+        for(int i=0; i<answerCheckbox.length; i++)
+        {
+            answerCheckbox[i].setForeground(Color.GRAY);
+        }
+    }
+    
+    private void resetSelection()
+    {
+        for(int i=0; i<answerCheckbox.length; i++)
+        {
+            answerCheckbox[i].setSelected(false);
+        }
+    }
+    
+    private void resetAnswers()
+    {
+        resetColors();
+        resetSelection();
+    }
+    
+    private void loadQuestion()
+    {
+        Question question = quizLogic.getQuestionManager().getRandomQuestion();
+        setQuestionText(question);
+        resetAnswers();
+        resetResultLabel();
+    }
+    
+    private void setResultLabel(boolean result)
+    {
+        if(result)
+        {
+            resultLabel.setText("Brawo!");
+            resultLabel.setForeground(Color.green);
+        }
+        else
+        {
+            resultLabel.setText("Źle");
+            resultLabel.setForeground(Color.red);
+        }
+    }
+    
+    private void resetResultLabel()
+    {
+        resultLabel.setText(null);
+        resultLabel.setForeground(Color.gray);
+    }
+    
+    private void setQuestionText(Question question)
+    {
+        questionNumberToBeEditedLabel.setText(String.valueOf(question.getQuestionID()));
+        questionTextArea.setText(question.getQuestionString());
+        for(int i=0; i<answerCheckbox.length; i++ )
+        {
+            answerCheckbox[i].setText(question.getAnswer(i).getAnswerString());
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -186,17 +351,21 @@ public class QuizFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox answer1Checkbox;
+    private javax.swing.JCheckBox answer2Checkbox;
+    private javax.swing.JCheckBox answer3Checkbox;
+    private javax.swing.JCheckBox answer4Checkbox;
+    private javax.swing.JCheckBox answer5Checkbox;
+    private javax.swing.JCheckBox answer6Checkbox;
     private javax.swing.JButton checkButton;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton nextQuestionButton;
     private final javax.swing.JLabel questionNumberLabel = new javax.swing.JLabel();
     private javax.swing.JLabel questionNumberToBeEditedLabel;
+    private javax.swing.JTextArea questionTextArea;
     private javax.swing.JLabel quizLabel;
+    private javax.swing.JLabel resultLabel;
     private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables
 }

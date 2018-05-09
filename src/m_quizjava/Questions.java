@@ -11,6 +11,7 @@ package m_quizjava;
 import m_quizjava.Question;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -31,12 +32,11 @@ public class Questions {
         this.questionList = questionList;
     }
     
-    public Question getQuestion()
+    public Question getQuestion(int i)
     {
-        //get specific question
-        //return questionList.get(x);
-        return null;
+        return questionList.get(i);
     }
+    
     
     public Question getQuestionByID(int id)
     {
@@ -73,5 +73,9 @@ public class Questions {
         this.questionList = questionList;
     }
             
+    public int getQuestionCount()
+    {
+        return questionList.size();
+    }
     
 }
